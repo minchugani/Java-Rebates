@@ -9,17 +9,17 @@ public class ItemKeys implements Serializable {
 	@Column(name = "\"ItemNumber\"" )
 		private int itemNumber;
 	@Column(name = "\"VendorNumber\"" )
-		private int vendorNum;
+		private String vendorNum;
 		public int getItemNumber() {
 			return itemNumber;
 		}
 		public void setItemNumber(int itemNumber) {
 			this.itemNumber = itemNumber;
 		}
-		public int getVendorNum() {
+		public String getVendorNum() {
 			return vendorNum;
 		}
-		public void setVendorNum(int vendorNum) {
+		public void setVendorNum(String vendorNum) {
 			this.vendorNum = vendorNum;
 		}
 		@Override
@@ -27,7 +27,7 @@ public class ItemKeys implements Serializable {
 			final int prime = 31;
 			int result = 1;
 			result = prime * result + itemNumber;
-			result = prime * result + vendorNum;
+			result = prime * result + ((vendorNum == null) ? 0 : vendorNum.hashCode());
 			return result;
 		}
 		@Override
@@ -41,12 +41,16 @@ public class ItemKeys implements Serializable {
 			ItemKeys other = (ItemKeys) obj;
 			if (itemNumber != other.itemNumber)
 				return false;
-			if (vendorNum != other.vendorNum)
+			if (vendorNum == null) {
+				if (other.vendorNum != null)
+					return false;
+			} else if (!vendorNum.equals(other.vendorNum))
 				return false;
 			return true;
 		}
 		
 		
 	}
+
 
 

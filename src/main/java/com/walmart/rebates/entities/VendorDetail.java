@@ -16,10 +16,10 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "\"VendorMaster\"")
 public class VendorDetail {
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	//@GeneratedValue(strategy = GenerationType.AUTO)
 	@Id
 	@Column(name = "\"VendorNumber\"")
-	private int VendorNum;
+	private String VendorNum;
 
 	@Column(name = "\"VendorName\"")
 	private String VendorName;
@@ -30,11 +30,11 @@ public class VendorDetail {
 	@JoinColumn(name = "\"VendorNumber\"", referencedColumnName = "\"VendorNumber\"")
 	private List<ItemDetail> itmdtl;
 
-	public int getVendorNum() {
+	public String getVendorNum() {
 		return VendorNum;
 	}
 
-	public void setVendorNum(int vendorNum) {
+	public void setVendorNum(String vendorNum) {
 		VendorNum = vendorNum;
 	}
 

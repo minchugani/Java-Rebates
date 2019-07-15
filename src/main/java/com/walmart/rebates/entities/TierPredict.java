@@ -27,7 +27,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 @Table(name = "\"TierResults\"")
 @IdClass(TierKeys.class)
 
-public class TierResults implements Serializable {
+public class TierPredict implements Serializable {
 //	@EmbeddedId TierKeys tierkeys ;
 	
 	@Id
@@ -49,9 +49,7 @@ public class TierResults implements Serializable {
 	@Column(name = "\"TierRate\"")
 	private float TierRate;
 	
-	@Transient
-	@JsonSerialize
-	@Column(name = "\"Amount\"")
+	
 //	 @javax.persistence.Transient
 	
 	
@@ -108,5 +106,4 @@ public class TierResults implements Serializable {
 	public void setTovalue(int tovalue) {
 		this.tovalue = tovalue;
 	}
-
 }

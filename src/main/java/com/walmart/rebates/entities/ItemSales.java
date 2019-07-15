@@ -25,16 +25,33 @@ public class ItemSales implements Serializable {
     private int itemNumber;
     @Id
 	@Column(name = "\"VendorNumber\"")
-	private int vendorNum;
+	private String vendorNum;
     @Id
 	@Column(name = "\"Period\"")
 	private int period;
 
 	@Column(name = "\"POAmount\"")
-	private int poAmount;
+	private float poAmount;
 
 	@Column(name = "\"POQuantity\"")
 	private int poQuantity;
+
+	
+	public int getItemNumber() {
+		return itemNumber;
+	}
+
+	public void setItemNumber(int itemNumber) {
+		this.itemNumber = itemNumber;
+	}
+
+	public String getVendorNum() {
+		return vendorNum;
+	}
+
+	public void setVendorNum(String vendorNum) {
+		this.vendorNum = vendorNum;
+	}
 
 	public int getPeriod() {
 		return period;
@@ -44,11 +61,11 @@ public class ItemSales implements Serializable {
 		this.period = period;
 	}
 
-	public int getPoAmount() {
+	public float getPoAmount() {
 		return poAmount;
 	}
 
-	public void setPoAmount(int poAmount) {
+	public void setPoAmount(float poAmount) {
 		this.poAmount = poAmount;
 	}
 
@@ -59,6 +76,5 @@ public class ItemSales implements Serializable {
 	public void setPoQuantity(int poQuantity) {
 		this.poQuantity = poQuantity;
 	}
-
 }
 

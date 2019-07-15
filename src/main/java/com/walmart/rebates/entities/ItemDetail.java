@@ -33,18 +33,12 @@ public class ItemDetail implements Serializable {
 
 	@Column(name = "\"Fineline\"")
 	private int fineline;
-
-	@Column(name = "\"SalesQuantity\"")
-	private int salesQuantity;
+	
+	@Column(name ="\"DepartmentCategory\"")
+	public int departmentCatg;
 
 	@Column(name = "\"UOM\"")
-	private char uOM;
-
-	@Column(name = "\"SalesAmount\"")
-	private int salesAmt;
-
-	@Column(name = "\"Currency\"")
-	private String curr;
+	private String  uOm;
 
 	@Column(name = "\"ItemDescrption\"")
 	private String itemDes;
@@ -96,48 +90,32 @@ public class ItemDetail implements Serializable {
 		this.fineline = fineline;
 	}
 
-	public char getuOM() {
-		return uOM;
+
+	public int getDepartmentCatg() {
+		return departmentCatg;
 	}
 
-	public void setuOM(char uOM) {
-		this.uOM = uOM;
+	public void setDepartmentCatg(int departmentCatg) {
+		this.departmentCatg = departmentCatg;
+	}
+
+	public String getuOm() {
+		return uOm;
+	}
+
+	public void setuOm(String uOm) {
+		this.uOm = uOm;
 	}
 
 	public void setItemDes(String itemDes) {
-		itemDes = itemDes;
+		this.itemDes = itemDes;
 	}
 
-	public String getCurr() {
-		return curr;
-	}
 
-	public void setCurr(String curr) {
-		curr = curr;
-	}
 
-	public int getSalesAmt() {
-		return salesAmt;
-	}
-
-	public void setSalesAmt(int salesAmt) {
-		salesAmt = salesAmt;
-	}
-
-	public char getUOM() {
-		return uOM;
-	}
-
-	public void setUOM(char uOM) {
-		uOM = uOM;
-	}
-
-	public int getSalesQuantity() {
-		return salesQuantity;
-	}
-
-	public void setSalesQuantity(int salesQuantity) {
-		salesQuantity = salesQuantity;
-	}
+	
+	
+	
+	
 
 }
