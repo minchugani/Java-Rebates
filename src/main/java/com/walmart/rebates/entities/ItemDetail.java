@@ -1,3 +1,4 @@
+
 package com.walmart.rebates.entities;
 
 import java.io.Serializable;
@@ -33,12 +34,32 @@ public class ItemDetail implements Serializable {
 
 	@Column(name = "\"Fineline\"")
 	private int fineline;
-	
+
 	@Column(name ="\"DepartmentCategory\"")
 	public int departmentCatg;
+	/*
+	 * @Column(name = "\"SalesQuantity\"") 
+	 * private int salesQuantity;
+	 * 
+	 * 	@Column(name = "\"SalesAmount\"")
+	 * private int salesAmt;
+	 */
 
 	@Column(name = "\"UOM\"")
-	private String  uOm;
+	private String uOM;
+
+
+/*	@ManyToOne
+	@JoinColumns({
+			@JoinColumn(name = "\"Department\"", referencedColumnName = "\"Department\"", insertable = false, updatable = false),
+			@JoinColumn(name = "\"Subclass\"", referencedColumnName = "\"Subclass\"", insertable = false, updatable = false),
+			@JoinColumn(name = "\"Fineline\"", referencedColumnName = "\"Fineline\"", insertable = false, updatable = false),
+			@JoinColumn(name = "\"DepartmentCategory\"", referencedColumnName = "\"DepartmentCategory\"", insertable = false, updatable = false) })
+	private MerchHier merchhier ;*/
+
+	/*
+	 * @Column(name = "\"Currency\"") private String curr;
+	 */
 
 	@Column(name = "\"ItemDescrption\"")
 	private String itemDes;
@@ -90,6 +111,29 @@ public class ItemDetail implements Serializable {
 		this.fineline = fineline;
 	}
 
+	public String getuOM() {
+		return uOM;
+	}
+
+	public void setuOM(String uOM) {
+		this.uOM = uOM;
+	}
+
+	public void setItemDes(String itemDes) {
+		itemDes = itemDes;
+	}
+
+	/*
+	 * public String getCurr() { return curr; }
+	 * 
+	 * public void setCurr(String curr) { curr = curr; }
+	 * 
+	 * 
+	 * public int getSalesAmt() { return salesAmt; }
+	 * 
+	 * public void setSalesAmt(int salesAmt) { salesAmt = salesAmt; }
+	 */
+	 
 
 	public int getDepartmentCatg() {
 		return departmentCatg;
@@ -99,23 +143,27 @@ public class ItemDetail implements Serializable {
 		this.departmentCatg = departmentCatg;
 	}
 
-	public String getuOm() {
-		return uOm;
+	public String getUOM() {
+		return uOM;
 	}
 
-	public void setuOm(String uOm) {
-		this.uOm = uOm;
+	public void setUOM(String uOM) {
+		uOM = uOM;
 	}
 
-	public void setItemDes(String itemDes) {
-		this.itemDes = itemDes;
+/*	public MerchHier getMerchhier() {
+		return merchhier;
 	}
 
+/*	public void setMerchhier(MerchHier merchhier) {
+		this.merchhier = merchhier;
+	}
 
-
-	
-	
-	
-	
+	/*
+	 * public int getSalesQuantity() { return salesQuantity; }
+	 * 
+	 * public void setSalesQuantity(int salesQuantity) { salesQuantity =
+	 * salesQuantity; }
+	 */
 
 }
